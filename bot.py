@@ -2,7 +2,7 @@ import discord
 
 print("discord読み込みOK")
 
-TOKEN = "MTM4NDg5MTIwNTU0Nzk4Mjg5OA.GEE3P_.7QSU5gKsuLex13L5hRek7MDzR1Rrg1TR8JyZHg"
+TOKEN = "YOUR_TOKEN"
 
 intents = discord.Intents.default()
 intents.message_content = True
