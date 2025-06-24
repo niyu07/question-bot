@@ -1,8 +1,14 @@
+import os
 import discord
+from dotenv import load_dotenv
+
+load_dotenv()
 
 print("discord読み込みOK")
 
-TOKEN = "YOUR_TOKEN"
+TOKEN = os.getenv("DISCORD_TOKEN")
+CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
+
 
 intents = discord.Intents.default()
 intents.message_content = True
