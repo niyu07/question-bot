@@ -29,7 +29,7 @@ options.add_argument('--window-size=1920x1080')  # 一部サイトで必要な�
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
-# 3. ログインしたいページを開く（ここはpaizaのログインページURLに変えてね）
+# 3. ログインしたいページを開く
 driver.get("https://paiza.jp/login")
 
 # 4. ページが開くまでちょっと待つ（必要に応じて長くしてね）
@@ -47,21 +47,17 @@ password_box.send_keys(PASSWORD)
 login_button = driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
 login_button.click()
 
-# 8. ログイン後の処理までちょっと待つ
 sleep(5)
 
 driver.get("https://paiza.jp/challenges/ranks/c")
 
 sleep(5)
 
-# アクセスするURL # 例のURL。実際にそのリンクがあるページにすること！
+# アクセスするURL
 url = "https://paiza.jp/challenges/ranks/c"
 
-
-# Seleniumで今表示されているページのHTMLを取得
 html = driver.page_source
 
-# BeautifulSoupでHTMLを読み込む
 soup = BeautifulSoup(html, "html.parser")
 
 sleep(5)
@@ -86,14 +82,6 @@ for tag in link_tags:
     title = "タイトル" + text
 
     question.append((full_url, text))
-
-    # print("URL:", full_url)
-    # print("タイトル:", text)
-    # print("------")
-
-# ここでリストを全て取り出す
-# for i in range(len(question)):
-#     print(question[i])
 
 # randaomに問題を選ぶ
 random_index = np.random.randint(0, len(question))

@@ -23,6 +23,6 @@ async def on_ready():
         print(f"チャンネルが見つかりません。CHANNEL_ID={CHANNEL_ID} を確認してください。")
     else:
         await channel.send(output)
-    await client.close()  # 終わったらすぐ閉じる
+    await client.close()
 
 client.run(TOKEN)

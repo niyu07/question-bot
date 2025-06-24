@@ -1,8 +1,6 @@
-print("準備中...")  # ← 一番上に追加
-
 import discord
 
-print("discord読み込みOK")  # ← ライブラリ読み込み確認
+print("discord読み込みOK")
 
 TOKEN = "MTM4NDg5MTIwNTU0Nzk4Mjg5OA.GEE3P_.7QSU5gKsuLex13L5hRek7MDzR1Rrg1TR8JyZHg"
 
@@ -21,7 +19,7 @@ async def on_message(message):
         return
 
     if message.content == "こんにちは":
-        await message.channel.send("やっほー！")
+        await message.channel.send("Hello！")
 
 print("起動開始")
 client.run(TOKEN)
